@@ -11,9 +11,17 @@ function Card({ imgURL, title, price, onFavorite, onPlus }) {
   return (
     <div className={styles.card}>
       <div className={styles.favorite} onClick={onFavorite}>
-        <img src="/img/heart-unliked.svg" alt="unliked" />
+        <img
+          src={`${process.env.PUBLIC_URL}/img/heart-unliked.svg`}
+          alt="unliked"
+        />
       </div>
-      <img width={133} height={112} src={imgURL} alt="Sneakers" />
+      <img
+        width={133}
+        height={112}
+        src={`${process.env.PUBLIC_URL}${imgURL}`}
+        alt="Sneakers"
+      />
       <h5>{title}</h5>
       <div className="d-flex justify-between align-center">
         <div className="d-flex flex-column">
@@ -24,7 +32,11 @@ function Card({ imgURL, title, price, onFavorite, onPlus }) {
         <img
           className={styles.plus}
           onClick={onClickPlus}
-          src={isAdded ? "/img/btn-cheked.svg" : "/img/btn-plus.svg"}
+          src={
+            isAdded
+              ? `${process.env.PUBLIC_URL}/img/btn-cheked.svg`
+              : `${process.env.PUBLIC_URL}/img/btn-plus.svg`
+          }
           alt="Plus"
         />
       </div>
